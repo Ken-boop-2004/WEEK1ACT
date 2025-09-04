@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'; 
+import { Link, useRouter } from "expo-router"; 
 
 export default function SpotifyLoginScreen() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  const router = useRouter();
   return (
     <LinearGradient
       colors={['#121212', '#000000']}
       start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
+      end={{ x: 2, y: 2 }}
       style={styles.container}
     >
       {/* Spotify Logo */}
       <Image 
-        source={require('../../Image/Spotify_icon.svg.png')} 
+        source={require('../../Image/Spotify_icon.svg.png')}  // ✅ use PNG or WEBP
         style={styles.logo} 
       />
 
@@ -42,25 +43,26 @@ export default function SpotifyLoginScreen() {
       />
 
       {/* Forgot Password */}
-      <TouchableOpacity style={styles.forgotWrapper}>
+      <TouchableOpacity style={styles.forgotWrapper} activeOpacity={0.7}>
         <Text style={styles.forgotText}>Forgot password?</Text>
       </TouchableOpacity>
 
       {/* Sign In */}
-      <TouchableOpacity style={styles.signInButton}>
+      <TouchableOpacity style={styles.signInButton} onPress={() => router.push("/Home/HomePage")}>
         <Text style={styles.signInText}>Sign In</Text>
       </TouchableOpacity>
+
 
       {/* Social Logins */}
       <Text style={styles.socialText}>Be Correct With</Text>
       <View style={styles.socialContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.8}>
           <Image 
             source={require('../../Image/fb_icon4.webp')} 
             style={styles.socialIcon} 
           />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.8}>
           <Image 
             source={require('../../Image/google_icon4.webp')} 
             style={styles.socialIcon} 
@@ -70,7 +72,8 @@ export default function SpotifyLoginScreen() {
 
       {/* Sign Up */}
       <Text style={styles.signupText}>
-        Don’t have an account? <Text style={styles.signupLink}>Sign Up</Text>
+        Don’t have an account? 
+        <Link href="/Home/SignUp" style={styles.signupLink}> Sign Up</Link>
       </Text>
     </LinearGradient>
   );
@@ -142,7 +145,7 @@ const styles = StyleSheet.create({
   socialContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    gap: 30,
+    gap: 30, // ✅ RN 0.71+ supports gap, else use marginHorizontal
     marginBottom: 30,
   },
   socialIcon: {
