@@ -64,6 +64,10 @@ export default function ComponentShowcase() {
         <ThemedText>This is extra text inside a ScrollView layout.</ThemedText>
         <ThemedText>You can keep adding more components below.</ThemedText>
         <ThemedText>The ScrollView lets the content extend beyond the screen height.</ThemedText>
+        <ThemedText>The ScrollView lets the content extend beyond the screen height.</ThemedText>
+        <ThemedText>The ScrollView lets the content extend beyond the screen height.</ThemedText>
+        <ThemedText>The ScrollView lets the content extend beyond the screen height.</ThemedText>
+        <ThemedText>The ScrollView lets the content extend beyond the screen height.</ThemedText>
       </ThemedView>
 
       <ThemedView style={styles.section}>

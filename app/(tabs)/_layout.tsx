@@ -62,6 +62,23 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="Signin"
+        options={{
+          title: "Signin",
+          tabBarIcon: ({ color, size }) => (
+            <Image
+              source={require("../../Image/Component.png")}
+              style={{
+                width: size,
+                height: size,
+                tintColor: color, 
+                resizeMode: "contain",
+              }}
+            />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
