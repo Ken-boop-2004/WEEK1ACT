@@ -13,15 +13,28 @@ export default function RootLayout() {
   });
 
   if (!loaded) {
-    // Async font loading only occurs in development.
     return null;
   }
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+      <Stack
+        initialRouteName="Signin"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        {/* Main entry: Signin */}
+        <Stack.Screen name="Signin" options={{ title: 'Sign In' }} />
+
+        {/* Home section */}
+        <Stack.Screen name="/Home/ComponentShowcase" options={{ title: 'Component Showcase' }} />
+        <Stack.Screen name="/Home/explore" options={{ title: 'Explore' }} />
+        <Stack.Screen name="/Home/HomePage" options={{ title: 'Home Page' }} />
+        <Stack.Screen name="/Home/index" options={{ title: 'Home' }} />
+
+        {/* Not found screen */}
+        <Stack.Screen name="+not-found" options={{ title: 'Not Found' }} />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>

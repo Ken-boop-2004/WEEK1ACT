@@ -16,7 +16,7 @@ export default function SpotifyLoginScreen() {
     >
       {/* Spotify Logo */}
       <Image 
-        source={require('../../Image/Spotify_icon.svg.png')}  // ✅ use PNG or WEBP
+        source={require('../Image/Spotify_icon.svg.png')}  // ✅ use PNG or WEBP
         style={styles.logo} 
       />
 
@@ -58,13 +58,13 @@ export default function SpotifyLoginScreen() {
       <View style={styles.socialContainer}>
         <TouchableOpacity activeOpacity={0.8}>
           <Image 
-            source={require('../../Image/fb_icon4.webp')} 
+            source={require('../Image/fb_icon4.webp')} 
             style={styles.socialIcon} 
           />
         </TouchableOpacity>
         <TouchableOpacity activeOpacity={0.8}>
           <Image 
-            source={require('../../Image/google_icon4.webp')} 
+            source={require('../Image/google_icon4.webp')} 
             style={styles.socialIcon} 
           />
         </TouchableOpacity>
@@ -73,7 +73,7 @@ export default function SpotifyLoginScreen() {
       {/* Sign Up */}
       <Text style={styles.signupText}>
         Don’t have an account? 
-        <Link href="/Home/SignUp" style={styles.signupLink}> Sign Up</Link>
+        <Link href="/SignUp" style={styles.signupLink}> Sign Up</Link>
       </Text>
     </LinearGradient>
   );

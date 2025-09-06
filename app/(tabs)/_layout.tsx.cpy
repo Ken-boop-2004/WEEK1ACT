@@ -27,41 +27,7 @@ export default function TabLayout() {
         }),
       }}
     >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="house.fill" color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: "Explore",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="ComponentShowcase"
-        options={{
-          title: "ComponentShowcase",
-          tabBarIcon: ({ color, size }) => (
-            <Image
-              source={require("../../Image/Component.png")}
-              style={{
-                width: size,
-                height: size,
-                tintColor: color, 
-                resizeMode: "contain",
-              }}
-            />
-          ),
-        }}
-      />
+    
       <Tabs.Screen
         name="Signin"
         options={{

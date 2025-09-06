@@ -20,7 +20,7 @@ export default function SignUpScreen() {
       {/* Logo + Title */}
       <View style={styles.logoRow}>
         <Image 
-          source={require('../../Image/Spotify_icon.svg.png')}  
+          source={require('../Image/Spotify_icon.svg.png')}  
           style={styles.logo} 
         />
         <Text style={styles.title}>Spotify</Text>
@@ -117,13 +117,13 @@ export default function SignUpScreen() {
       <View style={styles.socialContainer}>
         <TouchableOpacity>
           <Image 
-            source={require('../../Image/fb_icon4.webp')} 
+            source={require('../Image/fb_icon4.webp')} 
             style={styles.socialIcon} 
           />
         </TouchableOpacity>
         <TouchableOpacity>
           <Image 
-            source={require('../../Image/google_icon4.webp')} 
+            source={require('../Image/google_icon4.webp')} 
             style={styles.socialIcon} 
           />
         </TouchableOpacity>
@@ -132,7 +132,7 @@ export default function SignUpScreen() {
       {/* Already have account */}
       <Text style={styles.signinText}>
         Already have an account?{" "} 
-        <Link href="/(tabs)/Signin" style={styles.signinLink}>
+        <Link href="/Signin" style={styles.signinLink}>
           Sign In
         </Link>
       </Text>
