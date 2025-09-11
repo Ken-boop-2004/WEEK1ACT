@@ -24,16 +24,9 @@ export default function RootLayout() {
           headerShown: false,
         }}
       >
-        {/* Main entry: Signin */}
         <Stack.Screen name="Signin" options={{ title: 'Sign In' }} />
-
-        {/* Home section */}
-        <Stack.Screen name="/Home/ComponentShowcase" options={{ title: 'Component Showcase' }} />
-        <Stack.Screen name="/Home/explore" options={{ title: 'Explore' }} />
-        <Stack.Screen name="/Home/HomePage" options={{ title: 'Home Page' }} />
-        <Stack.Screen name="/Home/index" options={{ title: 'Home' }} />
-
-        {/* Not found screen */}
+        <Stack.Screen name="SignUp" options={{ title: 'Sign Up' }} />
+        <Stack.Screen name="Home" options={{ title: 'Home' }} />
         <Stack.Screen name="+not-found" options={{ title: 'Not Found' }} />
       </Stack>
       <StatusBar style="auto" />

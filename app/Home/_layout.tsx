@@ -9,7 +9,6 @@ export default function HomeLayout() {
         tabBarActiveTintColor: "#1DB954", // Spotify green
       }}
     >
-       
       <Tabs.Screen
         name="index"
         options={{
@@ -19,7 +18,6 @@ export default function HomeLayout() {
           ),
         }}
       />
-      
       <Tabs.Screen
         name="explore"
         options={{
@@ -38,17 +36,15 @@ export default function HomeLayout() {
           ),
         }}
       />
-
       <Tabs.Screen
         name="HomePage"
         options={{
-          title: "HomeList",
+          title: "HomePage",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="apps" size={size} color={color} />
           ),
         }}
       />
-      
     </Tabs>
   );
 }
