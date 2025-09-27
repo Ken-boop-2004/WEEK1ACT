@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { StyleSheet, Alert, Dimensions, TextInput } from "react-native";
 import { Image } from "expo-image";
+import React, { useState } from "react";
+import { Alert, Dimensions, StyleSheet, TextInput } from "react-native";
 
+import { HelloWave } from "@/components/HelloWave";
+import NavigationPersistenceDemo from "@/components/NavigationPersistenceDemo";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { HelloWave } from "@/components/HelloWave";
 
 const { width } = Dimensions.get("window");
 
@@ -75,6 +76,11 @@ export default function ComponentShowcase() {
         <Image source={require("../../Image/JOSEinTHEwater.jpg")} style={styles.contentImage} />
         <Image source={require("../../Image/unnamed.jpg")} style={styles.contentImage} />
         <Image source={require("../../Image/unnamed.png")} style={styles.contentImage} />
+      </ThemedView>
+
+      <ThemedView style={styles.section}>
+        <ThemedText type="subtitle">Navigation Persistence Demo</ThemedText>
+        <NavigationPersistenceDemo />
       </ThemedView>
     </ParallaxScrollView>
   );

@@ -1,7 +1,7 @@
+import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from "expo-router";
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient'; 
-import { Link, useRouter } from "expo-router"; 
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function SpotifyLoginScreen() {
   const [username, setUsername] = useState('');
@@ -48,7 +48,7 @@ export default function SpotifyLoginScreen() {
       </TouchableOpacity>
 
       {/* Sign In */}
-      <TouchableOpacity style={styles.signInButton} onPress={() => router.push("/Home/HomePage")}>
+      <TouchableOpacity style={styles.signInButton} onPress={() => router.push("/Home/Drawer")}>
         <Text style={styles.signInText}>Sign In</Text>
       </TouchableOpacity>
 
@@ -70,11 +70,17 @@ export default function SpotifyLoginScreen() {
         </TouchableOpacity>
       </View>
 
-      {/* Sign Up */}
-      <Text style={styles.signupText}>
-        Don’t have an account? 
-        <Link href="/SignUp" style={styles.signupLink}> Sign Up</Link>
-      </Text>
+
+{/* Sign Up */}
+<Text style={styles.signupText}>
+  Don’t have an account?{" "}
+  <TouchableOpacity onPress={() => router.push("/SignUp")}>
+    <Text style={styles.signupLink}>Sign Up</Text>
+  </TouchableOpacity>
+</Text>
+
+
+
     </LinearGradient>
   );
 }

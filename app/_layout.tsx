@@ -1,35 +1,31 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import { Stack } from "expo-router";
+import { useEffect } from "react";
+import { Provider } from "react-redux";
+import { store } from "../store";
+import { useAppDispatch } from "../store/hooks";
+import { loadTheme } from "../store/themeSlice";
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+function AppContent() {
+  const dispatch = useAppDispatch();
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  if (!loaded) {
-    return null;
-  }
+  useEffect(() => {
+    dispatch(loadTheme());
+  }, [dispatch]);
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack
-        initialRouteName="Signin"
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Signin" options={{ title: 'Sign In' }} />
-        <Stack.Screen name="SignUp" options={{ title: 'Sign Up' }} />
-        <Stack.Screen name="Home" options={{ title: 'Home' }} />
-        <Stack.Screen name="+not-found" options={{ title: 'Not Found' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index" />
+      <Stack.Screen name="Signin" />
+      <Stack.Screen name="SignUp" />
+      <Stack.Screen name="Home" />
+    </Stack>
+  );
+}
+
+export default function RootLayout() {
+  return (
+    <Provider store={store}>
+      <AppContent />
+    </Provider>
   );
 }
