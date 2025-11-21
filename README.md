@@ -3,7 +3,12 @@
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
-SIGN IN/SIGN UP UI PAGE
+WEEK 1 ACTIVTY
+
+<img  width="500" alt="image" src="https://github.com/user-attachments/assets/993ff387-2eae-48d8-ae6f-580c2a7dd57a" />
+
+
+SIGN IN/SIGN UP UI PAGE (WEEK 2)
 
 SIGN IN PAGE
 
