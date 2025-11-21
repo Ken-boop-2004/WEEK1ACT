@@ -3,6 +3,7 @@
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
+![09877db3-9cdf-45ae-b9d3-2522e2d29211](https://github.com/user-attachments/assets/9b4a3245-2d09-427a-9e6b-1753511fc9e4)
 
 Week 3 Activity: Advanced Navigation
 <img width="928" height="2048" alt="image" src="https://github.com/user-attachments/assets/b704fe9a-7a34-4b8b-bb54-60556a50eb8e" />
@@ -32,6 +33,7 @@ Week 5: Device Features
 -  The camera app uses advanced PanResponder gestures for filter sliders, dragging, and crop adjustments, enabling precise and responsive editing controls. Animated transitions enhance both theme switching and filter       application, providing smooth visual feedback throughout the UI. Theme settings—light, dark, or custom—are saved through Redux Toolkit with AsyncStorage integration to ensure preferences persist across sessions.         Filter previews and editing animations create a dynamic and engaging user experience.
 
 Week 6:
+
 <img width="928" height="2048" alt="image" src="https://github.com/user-attachments/assets/e79c7144-b8b5-42ad-931b-d24e6910975d" />
 
 -  Enhancing Your React Native App with Location-Based Map Features
