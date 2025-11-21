@@ -1,11 +1,12 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from "expo-router";
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, Modal, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function SpotifyLoginScreen() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const router = useRouter();
   return (
     <LinearGradient
@@ -52,7 +53,6 @@ export default function SpotifyLoginScreen() {
         <Text style={styles.signInText}>Sign In</Text>
       </TouchableOpacity>
 
-
       {/* Social Logins */}
       <Text style={styles.socialText}>Be Correct With</Text>
       <View style={styles.socialContainer}>
@@ -71,15 +71,75 @@ export default function SpotifyLoginScreen() {
       </View>
 
 
-{/* Sign Up */}
-<Text style={styles.signupText}>
-  Don’t have an account?{" "}
-  <TouchableOpacity onPress={() => router.push("/SignUp")}>
-    <Text style={styles.signupLink}>Sign Up</Text>
-  </TouchableOpacity>
-</Text>
+      {/* Components Drawer Trigger */}
+      <TouchableOpacity
+        style={styles.drawerTrigger}
+        activeOpacity={0.8}
+        onPress={() => setIsDrawerOpen(true)}
+      >
+        <Text style={styles.drawerTriggerText}>Open Components Drawer</Text>
+      </TouchableOpacity>
 
+      {/* Sign Up */}
+      <Text style={styles.signupText}>
+        Don’t have an account?{" "}
+        <TouchableOpacity onPress={() => router.push("/SignUp")}>
+          <Text style={styles.signupLink}>Sign Up</Text>
+        </TouchableOpacity>
+      </Text>
 
+      {/* Bottom Drawer for Component Screens */}
+      <Modal
+        transparent
+        animationType="slide"
+        visible={isDrawerOpen}
+        onRequestClose={() => setIsDrawerOpen(false)}
+      >
+        <Pressable style={styles.drawerOverlay} onPress={() => setIsDrawerOpen(false)}>
+          <Pressable style={styles.drawerContainer}>
+            <Text style={styles.drawerTitle}>Component Screens</Text>
+            <Text style={styles.drawerSubtitle}>
+              Quick links to your demo and explore pages.
+            </Text>
+
+            <TouchableOpacity
+              style={styles.drawerItem}
+              activeOpacity={0.8}
+              onPress={() => {
+                setIsDrawerOpen(false);
+                router.push("/Home/ComponentShowcase");
+              }}
+            >
+              <Text style={styles.drawerItemTitle}>Component Showcase</Text>
+              <Text style={styles.drawerItemDescription}>
+                See the scavenger hunt of basic React Native components.
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.drawerItem}
+              activeOpacity={0.8}
+              onPress={() => {
+                setIsDrawerOpen(false);
+                router.push("/Home/explore");
+              }}
+            >
+              <Text style={styles.drawerItemTitle}>Explore</Text>
+              <Text style={styles.drawerItemDescription}>
+                Learn about routing, images, animations, and more.
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.drawerCloseButton}
+              activeOpacity={0.8}
+              onPress={() => setIsDrawerOpen(false)}
+            >
+              <Text style={styles.drawerCloseText}>Close</Text>
+            </TouchableOpacity>
+          </Pressable>
+        </Pressable>
+      </Modal>
 
     </LinearGradient>
   );
@@ -165,5 +225,74 @@ const styles = StyleSheet.create({
   signupLink: {
     color: '#1DB954',
     fontWeight: 'bold',
+  },
+  drawerTrigger: {
+    marginTop: 10,
+    marginBottom: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: '#1DB954',
+  },
+  drawerTriggerText: {
+    color: '#1DB954',
+    fontSize: 14,
+    fontWeight: '600',
+  },
+  drawerOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'flex-end',
+  },
+  drawerContainer: {
+    backgroundColor: '#121212',
+    paddingHorizontal: 20,
+    paddingTop: 16,
+    paddingBottom: 28,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+  },
+  drawerTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#fff',
+    marginBottom: 4,
+  },
+  drawerSubtitle: {
+    fontSize: 13,
+    color: '#bbb',
+    marginBottom: 16,
+  },
+  drawerItem: {
+    paddingVertical: 12,
+    borderRadius: 14,
+    backgroundColor: '#1E1E1E',
+    marginBottom: 10,
+  },
+  drawerItemTitle: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#fff',
+    marginBottom: 2,
+    paddingHorizontal: 10,
+  },
+  drawerItemDescription: {
+    fontSize: 12,
+    color: '#aaa',
+    paddingHorizontal: 10,
+  },
+  drawerCloseButton: {
+    alignSelf: 'center',
+    marginTop: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+    backgroundColor: '#1DB954',
+  },
+  drawerCloseText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#fff',
   },
 });
