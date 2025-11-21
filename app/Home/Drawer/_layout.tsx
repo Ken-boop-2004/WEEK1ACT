@@ -11,6 +11,7 @@ import { useAppSelector } from "../../../store/hooks";
 // Import drawer screens
 import Camera from './Camera';
 import HomePage from './HomePage';
+import MapScreen from './Map';
 import Playlists from './Playlists';
 import Profile from './Profile';
 import Settings from './Settings';
@@ -22,6 +23,7 @@ type RootDrawerParamList = {
   Playlists: undefined;
   Settings: undefined;
   Camera: undefined;
+  MapScreen: undefined;
 };
 
 const Drawer = createDrawerNavigator<RootDrawerParamList>();
@@ -180,6 +182,17 @@ function DrawerNavigator() {
           title: "Camera",
           drawerIcon: ({ color, size }) => (
             <Text style={{ color, fontSize: size === 24 ? 20 : size }}>📷</Text>
+          ),
+        }}
+      />
+
+      <Drawer.Screen 
+        name="MapScreen"
+        component={createAnimatedScreen(MapScreen)}
+        options={{
+          title: "Live Map",
+          drawerIcon: ({ color, size }) => (
+            <Text style={{ color, fontSize: size === 24 ? 20 : size }}>🗺️</Text>
           ),
         }}
       />
