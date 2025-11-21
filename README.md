@@ -6,10 +6,12 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 SIGN IN/SIGN UP UI PAGE
 
 SIGN IN PAGE
+
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/fb0fa519-2525-4f88-80b7-84de5bfdbe1a" />
 
 SIGN UP PAGE
-<img width="928" height="2048" alt="image" src="https://github.com/user-attachments/assets/3260b2ee-f559-4a4b-8ec3-ea654b56a566" />
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/3260b2ee-f559-4a4b-8ec3-ea654b56a566" />
 
 
 
